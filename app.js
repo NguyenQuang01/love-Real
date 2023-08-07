@@ -58,9 +58,9 @@ document.addEventListener(
                 `music/${music[Math.floor(Math.random() * music.length)]}.mp3`
             );
 
-        document
-            .getElementsByTagName("body")[0]
-            .insertAdjacentHTML("beforeend", "<div id='mask'></div>");
+        // document
+        //     .getElementsByTagName("body")[0]
+        //     .insertAdjacentHTML("beforeend", "<div id='mask'></div>");
     },
     false
 );
