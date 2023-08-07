@@ -118,6 +118,7 @@ footer {
     margin-bottom: 20px;
 }
 #music {
+    weight: 100%;
     grid-column: 2;
     position: relative;
     z-index: 1000;
