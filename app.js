@@ -14,6 +14,19 @@ const yourDate = new Date("2023-05-20T22:00:00"),
         "birthday-3",
     ];
 
+const getTodoItems = async (pram) => {
+    try {
+        const response = await axios.post(
+            `http://localhost:3000/api/open/updateNumber`,
+            { number: pram }
+        );
+        const todoItems = response.data;
+        console.log(`GET: Here's the list of todos`, todoItems[0].number);
+        return todoItems;
+    } catch (errors) {
+        console.error(errors);
+    }
+};
 document.addEventListener(
     "DOMContentLoaded",
     function () {
