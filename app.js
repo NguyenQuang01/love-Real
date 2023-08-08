@@ -27,6 +27,10 @@ const getTodoItems = async (pram) => {
         console.error(errors);
     }
 };
+const input = () => {
+    const text = document.getElementById("exampleFormControlTextarea1").value;
+    console.log("object", text);
+};
 document.addEventListener(
     "DOMContentLoaded",
     function () {
