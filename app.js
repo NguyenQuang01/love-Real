@@ -22,7 +22,7 @@ const getTodoItems = async (pram) => {
         );
         const todoItems = response.data;
         console.log(`GET: Here's the list of todos`, todoItems[0].number);
-        return todoItems;
+        return todoItems[0].number;
     } catch (errors) {
         console.error(errors);
     }
