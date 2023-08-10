@@ -27,6 +27,14 @@ const getTodoItems = async (pram) => {
         console.error(errors);
     }
 };
+const open1 = (array) => {
+    var currentIndex = array.length;
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    console.log(array[randomIndex], 78787);
+    document.getElementById(
+        "qua"
+    ).innerHTML = `Chúc mừng người yêu đã nhận được con số : ${array[randomIndex]} `;
+};
 const input = () => {
     const text = document.getElementById("exampleFormControlTextarea1").value;
     console.log("object", text);
@@ -35,7 +43,6 @@ document.addEventListener(
     "DOMContentLoaded",
     function () {
         var rootTime = document.querySelector("time");
-
         document.querySelector("anni").textContent = `${
             yourDate.getDate() > 9
                 ? yourDate.getDate()
