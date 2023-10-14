@@ -1,5 +1,18 @@
 const yourDate = new Date("2023-05-20T22:00:00"),
-    music = ["ido", "noinaycoanh", "nguoiamphu"];
+    music = [
+        "ido",
+        "noinaycoanh",
+        "nguoiamphu",
+        "AnSangNha",
+        "ChucVoNguNgon",
+        "EmLaHanhPhucTrongAnh",
+        "GiacMoThienDuong",
+        "MyEverything",
+        "NguoiConGaiTaThuong",
+        "ToiDaBietYeu",
+        // "birthday-2",
+        // "birthday-3",
+    ];
 
 document.addEventListener(
     "DOMContentLoaded",

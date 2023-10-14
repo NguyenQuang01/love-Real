@@ -121,8 +121,8 @@ footer {
 }
 
 #mask {
-    background: url("./img/360_F_531554661_KZ3bExszwsONC7tqyWSIrWB5RGq4x8kf.jpg")
-        top center / cover no-repeat;
+    background: url("./img/job297-ploy-03b-pink-01.jpg") top center / cover
+        no-repeat;
     opacity: 0.42;
     width: 100vw;
     height: 100vh;
@@ -130,7 +130,7 @@ footer {
     top: 0;
     left: 0;
 }
-.heart {
+.cylinder {
     animation: moveRotateCylinder 1s infinite linear;
 }
 @keyframes moveRotateCylinder {
