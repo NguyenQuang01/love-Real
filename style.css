@@ -31,12 +31,19 @@ h1 {
     grid-template-columns: repeat(3, 1fr);
     grid-auto-rows: minmax(auto, auto);
     grid-row-gap: 10px;
-    margin-top: 3.6rem;
     z-index: 99;
 }
 
-#clock-box,
+#clock-box {
+    grid-column: span 1;
+    display: grid;
+    margin-bottom: 5px;
+    margin: 4px !important;
+}
+
 #info {
+    margin-bottom: 40px;
+
     grid-column: span 3;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -44,12 +51,12 @@ h1 {
 
 #clock-box #clock {
     grid-column: 4 / 10;
-    background-color: #f8c8c8;
+    background-color: #ffff;
     padding: 0.6rem 2rem;
     padding-top: 0.8rem;
     text-align: center;
     font-size: 2.4rem;
-    border-radius: 10rem;
+    border-radius: 20px;
 }
 
 date,
@@ -68,15 +75,17 @@ time {
 }
 
 .avt {
-    width: 160px;
-    height: 160px;
+    width: 120px;
+    height: 120px;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 20px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 #info {
     margin-top: 2.6rem;
+    display: flex;
+    justify-content: center;
 }
 
 #heart {
@@ -88,6 +97,7 @@ time {
     align-self: center;
     padding-bottom: 2.6rem;
     text-align: center;
+    margin: 0 10px;
 }
 
 anni {
@@ -121,8 +131,8 @@ footer {
 }
 
 #mask {
-    background: url("./img/job297-ploy-03b-pink-01.jpg") top center / cover
-        no-repeat;
+    background: url("https://inan2h.vn/wp-content/uploads/2023/07/Quy-trinh-tiep-nhan-thong-tin-tu-khach-hang-rat-quan-trong.jpg")
+        top center / cover no-repeat;
     opacity: 0.42;
     width: 100vw;
     height: 100vh;
@@ -158,8 +168,8 @@ footer {
     }
 
     .avt {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
         object-fit: cover;
     }
 

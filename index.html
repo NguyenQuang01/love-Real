@@ -1,46 +1,369 @@
-<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link rel="stylesheet" href="style.css" />
         <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
         <title>Together</title>
+        <!--Source Code Pro Font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
+            rel="stylesheet"
+        />
+
+        <!--Source Code Pro Font-->
+
+        <!--Poppins font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+
+        <!--Poppins font-->
+        <style>
+            :root {
+                --body-color: rgb(145, 70, 101);
+                --font-family: "Inter", Source Code Pro;
+                --font-color: rgb(252, 185, 185);
+                --font-size: 25px;
+
+                --timing: 600ms;
+                --jump-height: 30px;
+
+                --dot-width: 30px;
+                --dot-height: 30px;
+                --dot-1-color: rgb(179, 238, 248);
+                --dot-2-color: rgb(253, 255, 148);
+                --dot-3-color: rgb(137, 255, 91);
+                --dot-4-color: rgb(249, 134, 253);
+
+                --footer-h1-font-family: "inter", poppins;
+                --footer-h1-font-size: 15px;
+
+                --footer-h1s-font-size: 12px;
+
+                --footer-h1-font-color: #8ab9ff;
+                --footer-h1-font-weight: 200;
+                --footer-bg-color: rgb(68, 15, 50);
+                --footer-h2-font-family: "Inter", poppins;
+                --footer-h2-font-weight: 100;
+                --footer-h2-font-size: 10px;
+
+                --footer-h2s-font-size: 8px;
+
+                --footer-h2-font-color: #ffffff;
+                --footer-h3-font-family: "Inter", poppins;
+                --footer-h3-font-weight: 100;
+                --footer-h3-font-size: 9px;
+
+                --footer-h3s-font-size: 7px;
+
+                --footer-h3-font-color: #ffffff;
+                --footer-h4-font-family: "Inter", poppins;
+                --footer-h4-font-weight: 100;
+                --footer-h4-font-size: 7px;
+                --footer-h4-font-color: #ffffff;
+            }
+
+            * {
+                -webkit-tap-highretro-color: transparent;
+            }
+
+            *:focus {
+                outline: none;
+            }
+
+            body {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                background: url("https://inan2h.vn/wp-content/uploads/2023/07/Quy-trinh-tiep-nhan-thong-tin-tu-khach-hang-rat-quan-trong.jpg")
+                    top center / cover no-repeat;
+                /* opacity: 0.42; */
+                width: 100vw;
+                height: 100vh;
+                position: fixed;
+                top: 0;
+                left: 0;
+            }
+            .boxs {
+                display: flex;
+                justify-content: center;
+                margin-top: 20px;
+            }
+            #clock-box {
+                margin-top: 5px;
+                z-index: 2;
+            }
+
+            .info-all {
+                display: flex;
+                align-items: flex-end;
+                height: 100%;
+                justify-content: center;
+                margin-bottom: 20px;
+            }
+            .loading-text {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                color: var(--font-color);
+                font-family: var(--font-family);
+                font-size: var(--font-size);
+                filter: drop-shadow(0px 20px 2.5px rgba(231, 204, 204, 0.3));
+            }
+
+            .loading-dots {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+
+            .dot-1,
+            .dot-2,
+            .dot-3,
+            .dot-4 {
+                position: relative;
+                content: "";
+                height: var(--dot-height);
+                width: var(--dot-width);
+                border-radius: 50%;
+                animation: jumping-dots 2s cubic-bezier(0.55, 1.55, 0.55, 1.55)
+                    infinite;
+                filter: drop-shadow(0px 0px 10px rgba(119, 72, 115, 0.521))
+                    drop-shadow(0px 10px 5px rgba(0, 0, 0, 0.3));
+                transition: var(--timing);
+            }
+
+            .dot-1::before,
+            .dot-2::before,
+            .dot-3::before,
+            .dot-4::before {
+                content: "❤";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                background-color: transparent;
+                border-radius: 50%;
+            }
+
+            .dot-1 {
+                background-color: var(--dot-1-color);
+            }
+
+            .dot-2 {
+                background-color: var(--dot-2-color);
+                animation-delay: 0.25s;
+            }
+
+            .dot-3 {
+                background-color: var(--dot-3-color);
+                animation-delay: 0.5s;
+            }
+
+            .dot-4 {
+                background-color: var(--dot-4-color);
+                animation-delay: 0.75s;
+            }
+
+            @keyframes jumping-dots {
+                0%,
+                50%,
+                75%,
+                100% {
+                    transform: translateY(0);
+                }
+                25% {
+                    transform: translateY(calc(var(--jump-height) * -1));
+                }
+            }
+
+            footer {
+                position: fixed;
+                bottom: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 0;
+                width: 100%;
+                background-color: var(--footer-bg-color);
+            }
+
+            .abttext h2 {
+                margin: 0%;
+                padding: 0%;
+                font-family: var(--footer-h2-font-family);
+                font-weight: var(--footer-h2-font-weight);
+                font-size: var(--footer-h2-font-size);
+                color: var(--footer-h2-font-color);
+            }
+
+            .abttext h3 {
+                margin: 0%;
+                padding: 0%;
+                font-family: var(--footer-h3-font-family);
+                font-weight: var(--footer-h3-font-weight);
+                font-size: var(--footer-h3-font-size);
+                color: var(--footer-h3-font-color);
+            }
+
+            .abttext h4 {
+                margin: 0%;
+                padding: 0%;
+                font-family: var(--footer-h4-font-family);
+                font-weight: var(--footer-h4-font-weight);
+                font-size: var(--footer-h4-font-size);
+                color: var(--footer-h4-font-color);
+            }
+            h2 {
+                position: relative;
+                font-size: 0.7rem;
+                color: #2d2a32;
+                width: 100%;
+                text-transform: uppercase;
+                text-align: center;
+                -webkit-box-reflect: below 1px
+                    linear-gradient(transparent, #0002);
+                line-height: 0.7em;
+                outline: none;
+                animation: animate 5s linear infinite;
+                animation-delay: 1s;
+            }
+
+            @keyframes animate {
+                0%,
+                18.1%,
+                20%,
+                55%,
+                60%,
+                90%,
+                92% {
+                    color: #2d2a32;
+                    text-shadow: none;
+                }
+                18%,
+                20.1%,
+                55.1%,
+                60.2%,
+                90.1%,
+                92.2%,
+                100% {
+                    color: #ffff;
+                    text-shadow: 0 0 10px #adb5bd, 0 0 20px #adb5bd,
+                        0 0 40px #212529, 0 0 60px #adb5bd, 0 0 80px #212529,
+                        0 0 140px #adb5bd;
+                }
+            }
+            .box {
+                position: relative;
+                background: repeating-conic-gradient(
+                    from var(--a),
+                    #ff2770 0%,
+                    #ff2770 5%,
+                    transparent 5%,
+                    transparent 40%,
+                    #ff2770 50%
+                );
+                border-radius: 20px;
+                animation: animate 4s linear infinite;
+            }
+            .box::before,
+            .box::after {
+                content: "";
+                position: absolute;
+            }
+            .box::before {
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+                background: repeating-conic-gradient(
+                    from var(--a),
+                    #45f3ff 0%,
+                    #45f3ff 5%,
+                    transparent 5%,
+                    transparent 40%,
+                    #45f3ff 50%
+                );
+                border-radius: 20px;
+                animation: animate 4s linear infinite;
+                animation-delay: -1s;
+            }
+            .box::after {
+                inset: 8px;
+                /* background: #2d2d39; */
+                border-radius: 15px;
+            }
+
+            @property --a {
+                syntax: "<angle>";
+                inherits: false;
+                initial-value: 0deg;
+            }
+            @keyframes animate {
+                0% {
+                    --a: 0deg;
+                }
+                100% {
+                    --a: 360deg;
+                }
+            }
+        </style>
     </head>
+
     <body>
-        <div id="wrapper">
-            <h1>LOVE DAYS</h1>
-
-            <div id="clock-box">
-                <div id="clock">
-                    <date>0 DAYS</date>
-                    <time>00:00:00</time>
+        <div class="boxs">
+            <div class="box">
+                <div id="clock-box">
+                    <div id="clock">
+                        <date>0 DAYS</date>
+                        <time>00:00:00</time>
+                    </div>
                 </div>
             </div>
-
-            <div id="info">
-                <div class="one">
-                    <img src="img/IMG_6217.JPG" class="avt" alt="" />
-                    <p>Quang Tèo</p>
-                </div>
-                <div id="heart">
-                    <span class="cylinder">❤</span><anni>...</anni>
-                </div>
-                <div class="two">
-                    <img src="img/IMG_6656.JPG" class="avt" alt="" />
-                    <p>Ngọc Ruby</p>
-                </div>
-            </div>
-
-            <div id="music">
-                <audio loop autoplay controls>
-                    Your browser does not support the audio element.
-                </audio>
-            </div>
-            <footer>Thank you for your love 💕</footer>
         </div>
 
-        <script src="app.js"></script>
+        <p class="loading-text">Sẵn sàng, chuẩn bị mốc 365 ngày.</p>
+        <div class="info-all">
+            <div>
+                <div id="info">
+                    <div class="one">
+                        <img
+                            src="https://scontent.fhan2-4.fna.fbcdn.net/v/t1.6435-9/58781496_658837024568685_6699021578614603776_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeGC0ds08NoOdjCrOS6KqaRxaaUeeum-4HlppR566b7gefhM5GQfXcl_1rh_iENlDzGw08-VJ2urqdsJC81Lu40L&_nc_ohc=vTjO6UFfyHcAb41TZQY&_nc_ht=scontent.fhan2-4.fna&oh=00_AfDc_5zUbvfKBiYnaagfN_sry8DvMNMo261bADF7HRSc4Q&oe=664033C5"
+                            class="avt box"
+                            alt=""
+                        />
+                        <h2 contenteditable="true">Quang Tèo</h2>
+                    </div>
+                    <div id="heart">
+                        <span class="cylinder">❤</span><anni>...</anni>
+                    </div>
+                    <div class="two">
+                        <img
+                            src="https://lh3.googleusercontent.com/pw/AP1GczOYB_YmjEfeQPt91H_YIAjoW737Q3d3cYtEUL5agiDVeeIb8heOgkv-6dlcvCtk29qiM7en4L7WWDI3S0Hl3jceUZNMhszacGMx5B0yuaydwrq_-7fFjTdzFNHNiIc-crpCxrquCjf2RRcby3GQH6j7mBXftM39npewPJQtjJfk04hMz5jkA2XxoaCok6znsvP567blgSyqRy8nullocwAnJLxJxE2POEHORkZ-LZ4_EPTFDwadmEvGqAvVon_slNxLQgVZQu0h-aNii9LS9D-h0BNtwNLMWpR5_IfqzJwHboSRyE4pMDDS9E1LXlDsMa0JDg68LQfL2jyW5hcwQYQl9WDuHP5cmKrg-POPHxDzziTrEbn9BhcXUo3xMXOSc-A-BIa6o7kHpiIMei1JpcS7wGU-FSalDZAvIWqVgEPOxqgEzX9IWtLKfJg-PO3alYDzvm9U0o9GpYcHpwFxGrb9SSvZulNh8Ukcc2syg5peachPlroE6Iu80AGCDK2h8dfuXV6Xhxke7vjzMLpf4f7cvmV763OVKDwPTsCqGlkdJo3_SoHJJXC48lJwt3_JwXm9vwNiiBMC1Y-qMXSgL6Lf-Vs7VtpIz7kAyXiIRP0phOvIJ9eFfCXs1Blwk2fDwmHlxOkhElVXdxQhaS1jyhQCYE9XVevrOIrD8hDr2pjVBe-WXRTf3KDWdgdQgMl-yKSOpopb410Cd_abDU7WqnuRK0_tv_YcogeLezdMGoSl_hmOm3TxHcVNuFP2-lFKDaRw8qEgfUjqXuyUwohEIZbbnaI_LghgtrWsqRM0kNi3mX4Rzq3m6m5emB2o1RoFwb_po1ehmSo7loaAwjvSeP8rtecRRB05GgrFk2Qdp0PsxSl7PRrynjXysMLOKEVur0FjL1L23Oftyf6dZjIgZVMh5zfF5bZNeqkN2ZJIW2_k41pkHNWy_voUFMvTmV0=w413-h471-s-no-gm?authuser=0"
+                            class="avt box"
+                            alt=""
+                        />
+                        <h2 contenteditable="true">Ngọc Ruby</h2>
+                    </div>
+                </div>
+                <div class="loading-dots">
+                    <div class="dot-1"></div>
+                    <div class="dot-2"></div>
+                    <div class="dot-3"></div>
+                    <div class="dot-4"></div>
+                </div>
+            </div>
+        </div>
     </body>
+    <script src="app.js"></script>
 </html>
