@@ -52,11 +52,11 @@ h1 {
 #clock-box #clock {
     grid-column: 4 / 10;
     background-color: #ffff;
-    padding: 0.6rem 2rem;
+    padding: 0.6rem 5.8rem;
     padding-top: 0.8rem;
     text-align: center;
     font-size: 2.4rem;
-    border-radius: 20px;
+    /* border-radius: 20px; */
 }
 
 date,
