@@ -8,6 +8,35 @@ body {
 img {
     max-width: 100%;
 }
+img {
+    --s: 100px; /* image size */
+
+    width: var(--s);
+    box-sizing: border-box;
+    /* background: #e5414e; heart color */
+    aspect-ratio: 1;
+    object-fit: cover;
+    --_m: radial-gradient(#000 69%, #0000 70%) 84.5%/50%;
+    -webkit-mask-box-image: var(--_m);
+    mask-border: var(--_m);
+    clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+    cursor: pointer;
+    padding: 0;
+    transition: 0.6s padding-inline, padding-block 0s;
+}
+/* img:hover {
+    padding: 0;
+    transition: 0.6s padding-inline, padding-block 0s;
+} */
+
+/* fallback until better support for mask-border */
+@supports not (-webkit-mask-box-image: var(--_m)) {
+    img {
+        -webkit-mask: radial-gradient(at 70% 31%, #000 29%, #0000 30%),
+            radial-gradient(at 30% 31%, #000 29%, #0000 30%),
+            linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+    }
+}
 
 body {
     display: grid;
@@ -39,6 +68,7 @@ h1 {
     display: grid;
     margin-bottom: 5px;
     margin: 4px !important;
+    border-radius: 20px;
 }
 
 #info {
@@ -51,12 +81,22 @@ h1 {
 
 #clock-box #clock {
     grid-column: 4 / 10;
-    background-color: #ffff;
+    background: linear-gradient(
+        to left,
+        #23a6d5,
+        #4a148c,
+        #ff0066,
+        #4a148c,
+        #23a6d5
+    );
+    background-size: 400% 400%;
+    animation: gradientTranisition 50s linear;
     padding: 0.6rem 5.8rem;
     padding-top: 0.8rem;
     text-align: center;
     font-size: 2.4rem;
-    /* border-radius: 20px; */
+    border-radius: 20px;
+    color: #fff;
 }
 
 date,
@@ -187,5 +227,16 @@ footer {
         font-size: 1.2rem;
         margin: 0;
         padding-bottom: 2rem;
+    }
+}
+@keyframes gradientTranisition {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
     }
 }
