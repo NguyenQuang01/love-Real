@@ -1,0 +1,242 @@
+html,
+body {
+    background-color: #f6f6f6;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    max-width: 100%;
+}
+img {
+    --s: 100px; /* image size */
+
+    width: var(--s);
+    box-sizing: border-box;
+    /* background: #e5414e; heart color */
+    aspect-ratio: 1;
+    object-fit: cover;
+    --_m: radial-gradient(#000 69%, #0000 70%) 84.5%/50%;
+    -webkit-mask-box-image: var(--_m);
+    mask-border: var(--_m);
+    clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+    cursor: pointer;
+    padding: 0;
+    transition: 0.6s padding-inline, padding-block 0s;
+}
+/* img:hover {
+    padding: 0;
+    transition: 0.6s padding-inline, padding-block 0s;
+} */
+
+/* fallback until better support for mask-border */
+@supports not (-webkit-mask-box-image: var(--_m)) {
+    img {
+        -webkit-mask: radial-gradient(at 70% 31%, #000 29%, #0000 30%),
+            radial-gradient(at 30% 31%, #000 29%, #0000 30%),
+            linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+    }
+}
+
+body {
+    display: grid;
+    font-family: "Segoe UI", sans-serif;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(auto, auto);
+    color: #3e3e3e;
+    text-shadow: 0.4px 0.4px 0.4px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-weight: lighter;
+    grid-column: span 3;
+    text-align: center;
+    color: #ec407a;
+}
+
+#wrapper {
+    display: grid;
+    grid-column: 3 / 11;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(auto, auto);
+    grid-row-gap: 10px;
+    z-index: 99;
+}
+
+#clock-box {
+    grid-column: span 1;
+    display: grid;
+    margin-bottom: 5px;
+    margin: 4px !important;
+    border-radius: 20px;
+}
+
+#info {
+    margin-bottom: 40px;
+
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+#clock-box #clock {
+    grid-column: 4 / 10;
+    background: linear-gradient(
+        to left,
+        #23a6d5,
+        #4a148c,
+        #ff0066,
+        #4a148c,
+        #23a6d5
+    );
+    background-size: 400% 400%;
+    animation: gradientTranisition 50s linear;
+    padding: 0.6rem 5.8rem;
+    padding-top: 0.8rem;
+    text-align: center;
+    font-size: 2.4rem;
+    border-radius: 20px;
+    color: #fff;
+}
+
+date,
+time {
+    display: block;
+}
+
+date {
+    font-size: 18px;
+}
+
+time {
+    font-family: "Arial", sans-serif;
+    line-height: 3.2rem;
+    letter-spacing: 2px;
+}
+
+.avt {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+#info {
+    margin-top: 2.6rem;
+    display: flex;
+    justify-content: center;
+}
+
+#heart {
+    grid-column: span 2;
+    display: grid;
+    grid-template-rows: 2;
+    font-size: 44px;
+    color: #b90d46;
+    align-self: center;
+    padding-bottom: 2.6rem;
+    text-align: center;
+    margin: 0 10px;
+}
+
+anni {
+    font-size: 16px;
+    letter-spacing: 0.2px;
+}
+
+#info .one {
+    grid-column: 3 / 6;
+    text-align: center;
+}
+
+#info .two {
+    grid-column: 8 / 11;
+    text-align: center;
+}
+
+footer {
+    grid-column: span 3;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: lighter;
+    margin-top: 1.2rem;
+}
+
+#music {
+    grid-column: 2;
+    position: relative;
+    z-index: 1000;
+    opacity: 0.4;
+}
+
+#mask {
+    background: url("https://inan2h.vn/wp-content/uploads/2023/07/Quy-trinh-tiep-nhan-thong-tin-tu-khach-hang-rat-quan-trong.jpg")
+        top center / cover no-repeat;
+    opacity: 0.42;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.cylinder {
+    animation: moveRotateCylinder 1s infinite linear;
+}
+@keyframes moveRotateCylinder {
+    0% {
+        transform: scale(0.9);
+    }
+    25% {
+        transform: scale(0.8);
+    }
+
+    75% {
+        transform: scale(0.6);
+    }
+    100% {
+        transform: scale(0.9);
+    }
+}
+@media (max-width: 992px) {
+    #wrapper {
+        grid-column: span 12;
+    }
+
+    #clock-box #clock {
+        grid-column: 2 / 12;
+    }
+
+    .avt {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+    }
+
+    #info .one,
+    #info .two {
+        grid-column: span 12;
+    }
+
+    #heart {
+        grid-column: span 12;
+        padding-bottom: 1rem;
+    }
+
+    footer {
+        font-size: 1.2rem;
+        margin: 0;
+        padding-bottom: 2rem;
+    }
+}
+@keyframes gradientTranisition {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 200% 50%;
+    }
+}

@@ -1,27 +1,22 @@
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+
+<!-- saved from url=(0032)http://127.0.0.1:5501/index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/png" href="http://127.0.0.1:5501/img/favicon.png">
         <title>Together</title>
         <!--Source Code Pro Font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap"
-            rel="stylesheet"
-        />
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        <link href="./Together_files/css2" rel="stylesheet">
 
         <!--Source Code Pro Font-->
 
         <!--Poppins font-->
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com/">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+        <link href="./Together_files/css2(1)" rel="stylesheet">
+        <link rel="stylesheet" href="./Together_files/style.css">
 
         <!--Poppins font-->
         <style>
@@ -110,7 +105,7 @@
                 height: 100%;
                 justify-content: center;
                 width: 100%;
-                margin-top: -400px;
+                margin-top: -373px;
             }
             .loading-text {
                 display: flex;
@@ -453,7 +448,6 @@
                 justify-content: center;
                 align-items: center;
                 overflow: hidden;
-                bottom: -435px;
             }
 
             .day365 h2 {
@@ -479,7 +473,7 @@
             }
 
             .day365 h2:nth-child(2) {
-                color: #b90d46;
+                color: #03a9f4;
                 z-index: 2;
                 animation: animate365 4s ease-in-out infinite;
             }
@@ -543,8 +537,8 @@
             <div class="box">
                 <div id="clock-box">
                     <div id="clock">
-                        <date>0 DAYS</date>
-                        <time>00:00:00</time>
+                        <date>364 DAYS</date>
+                        <time>06:53:32</time>
                     </div>
                 </div>
             </div>
@@ -554,18 +548,23 @@
                 <div id="info">
                     <div class="one">
                         <!-- <img src="./img/avata1.jpeg" class="avt box" alt="" /> -->
-                        <img src="./img/avata1.jpeg" alt="a random girl" />
+                        <img src="./Together_files/avata1.jpeg" alt="a random girl">
                         <h2 contenteditable="true">Quang Tèo</h2>
                     </div>
                     <div id="heart">
-                        <span class="cylinder">❤</span><anni>...</anni>
+                        <span class="cylinder">❤</span><anni>20-05-2023</anni>
                     </div>
                     <div class="two">
-                        <img src="./img/avata2.jpeg" class="avt box" alt="" />
+                        <img src="./Together_files/avata2.jpeg" class="avt box" alt="">
                         <h2 contenteditable="true">Ngọc Ruby</h2>
                     </div>
                 </div>
-
+                <div class="loading-dots">
+                    <div class="dot-1"></div>
+                    <div class="dot-2"></div>
+                    <div class="dot-3"></div>
+                    <div class="dot-4"></div>
+                </div>
                 <div class="snowflakes" aria-hidden="true">
                     <div class="snowflake">❤️‍🔥</div>
                     <div class="snowflake">😍</div>
@@ -582,19 +581,50 @@
                 </div>
             </div>
         </div>
-
         <div class="day365">
             <h2>365 day</h2>
             <h2>365 day</h2>
             <h2>365 day</h2>
         </div>
-        <div class="loading-dots">
-            <div class="dot-1"></div>
-            <div class="dot-2"></div>
-            <div class="dot-3"></div>
-            <div class="dot-4"></div>
-        </div>
-    </body>
+    <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
     <script type="text/javascript">
         // <![CDATA[
         var bits = 80; // how many bits
@@ -992,5 +1022,6 @@
             return div;
         }
     </script>
-    <script src="app.js"></script>
-</html>
+    <script src="./Together_files/app.js"></script>
+
+<div style="position: fixed; top: 0px; left: 0px; overflow: visible; width: 1px; height: 1px; background-color: transparent;"><div style="position: absolute; width: 12px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div><div style="position: absolute; width: 13px; overflow: hidden; background-color: transparent;"></div></div></body></html>
