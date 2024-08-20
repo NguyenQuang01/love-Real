@@ -16,10 +16,10 @@ img {
     /* background: #e5414e; heart color */
     aspect-ratio: 1;
     object-fit: cover;
-    --_m: radial-gradient(#000 69%, #0000 70%) 84.5%/50%;
+    /*  --_m: radial-gradient(#000 69%, #0000 70%) 84.5%/50%;
     -webkit-mask-box-image: var(--_m);
     mask-border: var(--_m);
-    clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+    clip-path: polygon(-41% 0, 50% 91%, 141% 0); */
     cursor: pointer;
     padding: 0;
     transition: 0.6s padding-inline, padding-block 0s;
@@ -81,14 +81,14 @@ h1 {
 
 #clock-box #clock {
     grid-column: 4 / 10;
-    background: linear-gradient(
+    /* background: linear-gradient(
         to left,
         #23a6d5,
         #4a148c,
         #ff0066,
         #4a148c,
         #23a6d5
-    );
+    ); */
     background-size: 400% 400%;
     animation: gradientTranisition 50s linear;
     padding: 0.6rem 5.8rem;

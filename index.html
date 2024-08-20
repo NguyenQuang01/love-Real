@@ -82,7 +82,8 @@
                 display: flex;
                 flex-direction: column;
                 overflow: hidden;
-                background: url("./img/bg.jpeg") top center / cover no-repeat;
+                background: url("./img/backgroup-happybirthday.png") top center /
+                    cover no-repeat;
 
                 /* opacity: 0.42; */
                 width: 100vw;
@@ -110,7 +111,7 @@
                 height: 100%;
                 justify-content: center;
                 width: 100%;
-                margin-top: -210px;
+                margin-top: -134px;
             }
             .loading-text {
                 display: flex;
@@ -271,14 +272,14 @@
             }
             .box {
                 position: relative;
-                background: repeating-conic-gradient(
+                /* background: repeating-conic-gradient(
                     from var(--a),
                     #ff2770 0%,
                     #ff2770 5%,
                     transparent 5%,
                     transparent 40%,
                     #ff2770 50%
-                );
+                ); */
                 animation: animate 4s linear infinite;
                 border-radius: 20px;
             }
@@ -292,14 +293,14 @@
                 width: 100%;
                 height: 100%;
                 z-index: -1;
-                background: repeating-conic-gradient(
+                /* background: repeating-conic-gradient(
                     from var(--a),
                     #45f3ff 0%,
                     #45f3ff 5%,
                     transparent 5%,
                     transparent 40%,
                     #45f3ff 50%
-                );
+                ); */
                 animation: animate 4s linear infinite;
                 animation-delay: -1s;
                 border-radius: 20px;
@@ -453,14 +454,14 @@
                 justify-content: center;
                 align-items: center;
                 overflow: hidden;
-                bottom: -435px;
+                bottom: -281px;
             }
 
             .day365 h2 {
-                top: 20px;
+                top: 50px;
                 position: absolute;
                 transform: translate(-0%, 0%);
-                font-size: 18vw; /* Sử dụng đơn vị viewport width để phông chữ thay đổi theo kích thước màn hình */
+                font-size: 36px; /* Sử dụng đơn vị viewport width để phông chữ thay đổi theo kích thước màn hình */
                 white-space: nowrap; /* Đảm bảo chữ không bị ngắt dòng */
             }
 
@@ -479,7 +480,7 @@
             }
 
             .day365 h2:nth-child(2) {
-                color: #b90d46;
+                color: #ff5d93;
                 z-index: 2;
                 animation: animate365 4s ease-in-out infinite;
             }
@@ -539,6 +540,45 @@
     </head>
 
     <body>
+        <div class="day365">
+            <h2>happy birthday</h2>
+            <h2>happy birthday</h2>
+            <h2>happy birthday</h2>
+        </div>
+        <div class="info-all">
+            <div>
+                <div id="info">
+                    <div class="one">
+                        <!-- <img src="./img/avata1.jpeg" class="avt box" alt="" /> -->
+                        <img src="./img/anhiu.JPG" class="avt box" alt="" />
+                        <h2 contenteditable="true">Quang Tèo</h2>
+                    </div>
+                    <div id="heart">
+                        <span class="cylinder">🎂</span><anni>...</anni>
+                    </div>
+                    <div class="two">
+                        <img src="./img/emiu.jpg" class="avt box" alt="" />
+                        <h2 contenteditable="true">Ngọc Ruby</h2>
+                    </div>
+                </div>
+
+                <div class="snowflakes" aria-hidden="true">
+                    <div class="snowflake">🎂</div>
+                    <div class="snowflake">🎂</div>
+                    <div class="snowflake">❤️</div>
+                    <div class="snowflake">💞</div>
+                    <div class="snowflake">🎂</div>
+                    <div class="snowflake">💝</div>
+                    <div class="snowflake">🌹</div>
+                    <div class="snowflake">🩷</div>
+                    <div class="snowflake">🎂</div>
+                    <div class="snowflake">🎀</div>
+                    <div class="snowflake">🎁</div>
+                    <div class="snowflake">🎂</div>
+                </div>
+            </div>
+        </div>
+
         <div class="boxs">
             <div class="box">
                 <div id="clock-box">
@@ -548,45 +588,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="info-all">
-            <div>
-                <div id="info">
-                    <div class="one">
-                        <!-- <img src="./img/avata1.jpeg" class="avt box" alt="" /> -->
-                        <img src="./img/avata1.jpeg" alt="a random girl" />
-                        <h2 contenteditable="true">Quang Tèo</h2>
-                    </div>
-                    <div id="heart">
-                        <span class="cylinder">❤</span><anni>...</anni>
-                    </div>
-                    <div class="two">
-                        <img src="./img/avata2.jpeg" class="avt box" alt="" />
-                        <h2 contenteditable="true">Ngọc Ruby</h2>
-                    </div>
-                </div>
-
-                <div class="snowflakes" aria-hidden="true">
-                    <div class="snowflake">❤️‍🔥</div>
-                    <div class="snowflake">😍</div>
-                    <div class="snowflake">❤️</div>
-                    <div class="snowflake">💞</div>
-                    <div class="snowflake">💘</div>
-                    <div class="snowflake">💝</div>
-                    <div class="snowflake">🌹</div>
-                    <div class="snowflake">🩷</div>
-                    <div class="snowflake">💝</div>
-                    <div class="snowflake">🎀</div>
-                    <div class="snowflake">🎁</div>
-                    <div class="snowflake">🎂</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="day365">
-            <h2>365 day</h2>
-            <h2>365 day</h2>
-            <h2>365 day</h2>
         </div>
         <div class="loading-dots">
             <div class="dot-1"></div>
