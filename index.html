@@ -2,7 +2,10 @@
 <html lang="vi">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+        />
         <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
         <title>Together — Quang Tèo & Ngọc Ruby</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -11,7 +14,7 @@
             href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Outfit:wght@300;400;500&family=Great+Vibes&display=swap"
             rel="stylesheet"
         />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="style.css?v=5" />
     </head>
     <body>
         <div class="petals" aria-hidden="true">
@@ -71,16 +74,16 @@
                 <p class="counter-label">ngày đã yêu</p>
             </section>
 
-            <button
-                type="button"
-                class="music-btn"
-                id="musicToggle"
-                aria-label="Bật / tắt nhạc"
-            >
-                <span class="music-icon" aria-hidden="true">♪</span>
-            </button>
         </main>
 
+        <button
+            type="button"
+            class="music-btn"
+            id="musicToggle"
+            aria-label="Bật / tắt nhạc"
+        >
+            <span class="music-icon" aria-hidden="true">♪</span>
+        </button>
         <audio id="bgMusic" loop preload="auto"></audio>
         <script src="app.js"></script>
     </body>
