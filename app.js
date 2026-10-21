@@ -1,86 +1,58 @@
-const yourDate = new Date("2023-05-20T22:00:00"),
-    music = ["AnSangNha"];
+const yourDate = new Date("2023-05-20T22:00:00");
+const music = ["AnSangNha", "noinaycoanh"];
 
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-        function waveLoadingEffect() {
-            var baseText = "C";
-            var waveText = "hào đón 365 ngày";
-            var element = document.querySelector(".loading-text");
-            var text = baseText + waveText;
-            var i = 0;
-            var forward = true;
+document.addEventListener("DOMContentLoaded", function () {
+    const rootTime = document.querySelector("time");
+    const anniEl = document.querySelector("anni");
+    const dateEl = document.querySelector("date");
+    const audio = document.getElementById("bgMusic");
+    const musicBtn = document.getElementById("musicToggle");
 
-            function updateText() {
-                if (forward) {
-                    if (i < text.length) {
-                        element.textContent = text.substring(0, i + 1);
-                        i++;
-                    } else {
-                        forward = false;
-                        i--;
-                    }
-                } else {
-                    if (i >= baseText.length) {
-                        element.textContent = text.substring(0, i);
-                        i--;
-                    } else {
-                        forward = true;
-                        i++;
-                    }
-                }
-            }
+    if (anniEl) {
+        const d = yourDate.getDate();
+        const m = yourDate.getMonth() + 1;
+        const y = yourDate.getFullYear();
+        anniEl.textContent = `${d > 9 ? d : "0" + d}-${m > 9 ? m : "0" + m}-${y}`;
+    }
 
-            setInterval(updateText, 350);
-        }
+    function updateDays() {
+        if (!dateEl) return;
+        const days = Math.floor((Date.now() - yourDate.getTime()) / 86400000);
+        dateEl.textContent = days + " DAYS";
+    }
 
-        waveLoadingEffect();
+    function olock() {
+        if (!rootTime) return;
+        const today = new Date();
+        const totalSec = Math.floor((today - yourDate) / 1000);
+        const hrs = Math.floor(totalSec / 3600) % 24;
+        const min = Math.floor(totalSec / 60) % 60;
+        const sec = totalSec % 60;
+        rootTime.textContent = `${hrs > 9 ? hrs : "0" + hrs}:${
+            min > 9 ? min : "0" + min
+        }:${sec > 9 ? sec : "0" + sec}`;
+    }
 
-        var rootTime = document.querySelector("time");
-
-        document.querySelector("anni").textContent = `${
-            yourDate.getDate() > 9
-                ? yourDate.getDate()
-                : "0" + yourDate.getDate()
-        }-${
-            yourDate.getMonth() > 8
-                ? yourDate.getMonth() + 1
-                : "0" + (yourDate.getMonth() + 1)
-        }-${yourDate.getFullYear()}`;
-
-        document.querySelector("date").textContent =
-            Math.floor(
-                Math.floor((new Date() - yourDate) / 1000) / 60 / 60 / 24
-            ) + " DAYS";
-
-        function olock() {
-            var today = new Date(),
-                hrs =
-                    Math.floor(
-                        Math.floor((today - yourDate) / 1000) / 60 / 60
-                    ) % 24,
-                min =
-                    Math.floor(Math.floor((today - yourDate) / 1000) / 60) % 60,
-                sec = Math.floor((today - yourDate) / 1000) % 60;
-            rootTime.textContent = `${hrs > 9 ? hrs : "0" + hrs}:${
-                min > 9 ? min : "0" + min
-            }:${sec > 9 ? sec : "0" + sec}`;
-        }
+    updateDays();
+    olock();
+    setInterval(function () {
         olock();
-        var timer = setInterval(function () {
-            olock();
-        }, 1000);
-        document
-            .querySelector("audio")
-            .setAttribute(
-                "src",
-                `music/${music[Math.floor(Math.random() * music.length)]}.mp3`
-            );
+        updateDays();
+    }, 1000);
 
-        document
-            .getElementsByTagName("body")[0]
-            .insertAdjacentHTML("beforeend", "<div id='mask'></div>");
-    },
-    false
-);
+    if (audio) {
+        audio.src = `music/${music[Math.floor(Math.random() * music.length)]}.mp3`;
+    }
+
+    if (musicBtn && audio) {
+        musicBtn.addEventListener("click", function () {
+            if (audio.paused) {
+                audio.play().catch(function () {});
+                musicBtn.classList.add("is-playing");
+            } else {
+                audio.pause();
+                musicBtn.classList.remove("is-playing");
+            }
+        });
+    }
+});
